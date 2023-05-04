@@ -6,4 +6,5 @@ firebase.json
 
 .vscode
 .env
-.lib
+
+lib

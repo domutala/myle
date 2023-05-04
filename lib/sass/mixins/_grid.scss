@@ -1,0 +1,17 @@
+@use "sass:math";
+
+@mixin mBuildGrid($index: "") {
+  @if str-length($string: $index) > 0 {
+    $index: -#{$index};
+  }
+
+  @for $i from 1 through 12 {
+    $w: math.div(100, $i);
+
+    .grid.grid#{$index}-#{$i} {
+      > * {
+        width: #{$w}#{"%"};
+      }
+    }
+  }
+}

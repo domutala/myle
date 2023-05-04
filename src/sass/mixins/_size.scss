@@ -1,0 +1,42 @@
+@mixin mBuildSize() {
+  $names: ("width", "height");
+
+  @each $name in $names {
+    $values: (
+      str-slice(
+        $string: $name,
+        $start-at: 1,
+        $end-at: 1,
+      ),
+      $name
+    );
+
+    @for $i from 1 through 100 {
+      @each $value in $values {
+        .#{$value}-#{$i}p {
+          #{$name}: #{$i}#{"%"};
+        }
+        .max-#{$value}-#{$i}p {
+          max-#{$name}: #{$i}#{"%"};
+        }
+        .min-#{$value}-#{$i}p {
+          min-#{$name}: #{$i}#{"%"};
+        }
+      }
+    }
+
+    @for $i from 1 through 1000 {
+      @each $value in $values {
+        .#{$value}-#{$i} {
+          #{$name}: #{$i}px;
+        }
+        .max-#{$value}-#{$i} {
+          max-#{$name}: #{$i}px;
+        }
+        .min-#{$value}-#{$i} {
+          min-#{$name}: #{$i}px;
+        }
+      }
+    }
+  }
+}

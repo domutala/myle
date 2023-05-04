@@ -1,0 +1,7 @@
+@mixin screen($types...) {
+  @each $key, $screen in $screens {
+    @media (max-width: #{$screen}px) {
+      @content ($key);
+    }
+  }
+}

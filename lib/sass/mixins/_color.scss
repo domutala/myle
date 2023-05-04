@@ -1,0 +1,37 @@
+@use "sass:color";
+@use "sass:map";
+
+@mixin mBuildColorVar($color, $name) {
+  --ntv-#{$name}: #{$color};
+  --#{$name}: rgb(var(--ntv-#{$name}));
+
+  @for $i from 1 through 100 {
+    $o: 100 - $i;
+    @if $o > 9 {
+      $o: "0#{$o}";
+    } @else {
+      $o: "00#{$o}";
+    }
+
+    --#{$name}-#{$o}: rgba(var(--ntv-#{$name}), #{$i * 0.01});
+  }
+}
+
+@mixin mBuildColor($color, $name) {
+  .bg-#{$name} {
+    background-color: var(--#{$name});
+  }
+
+  @for $i from 1 through 100 {
+    $o: 100 - $i;
+    @if $o > 9 {
+      $o: "0#{$o}";
+    } @else {
+      $o: "00#{$o}";
+    }
+
+    .bg-#{$name}-#{$o} {
+      background-color: var(--#{$name}-#{$o});
+    }
+  }
+}

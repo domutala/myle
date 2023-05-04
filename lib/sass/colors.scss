@@ -1,0 +1,9 @@
+:root {
+  @each $key, $color in $colors {
+    @include mBuildColorVar($color, $key);
+  }
+}
+
+@each $key, $color in $colors {
+  @include mBuildColor($color, $key);
+}

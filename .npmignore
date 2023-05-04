@@ -1,0 +1,18 @@
+# Dependency directories
+node_modules
+
+yarn.error
+yarn-error.log
+
+.vscode
+.env
+
+.prettierrc
+
+# Logs
+logs
+*.log
+
+
+# Build generated files
+lib

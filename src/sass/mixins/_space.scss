@@ -1,0 +1,119 @@
+@mixin mBuildSpace($name, $lenght: 100) {
+  $n: str-slice(
+    $string: $name,
+    $start-at: 1,
+    $end-at: 1,
+  );
+
+  $values: ($n, $name);
+
+  @each $value in $values {
+    .#{$value}-auto,
+    .#{$value}l-auto,
+    .#{$value}x-auto {
+      #{$name}-left: auto;
+    }
+    .#{$value}-auto,
+    .#{$value}r-auto,
+    .#{$value}x-auto {
+      #{$name}-right: auto;
+    }
+
+    .#{$value}-auto,
+    .#{$value}t-auto,
+    .#{$value}y-auto {
+      #{$name}-top: auto;
+    }
+    .#{$value}-auto,
+    .#{$value}b-auto,
+    .#{$value}y-auto {
+      #{$name}-bottom: auto;
+    }
+
+    @for $i from 1 through $lenght {
+      .#{$value}-#{$i},
+      .#{$value}l-#{$i},
+      .#{$value}x-#{$i} {
+        #{$name}-left: #{$i}px;
+      }
+
+      .#{$value}-#{$i},
+      .#{$value}r-#{$i},
+      .#{$value}x-#{$i} {
+        #{$name}-right: #{$i}px;
+      }
+
+      .#{$value}-#{$i},
+      .#{$value}t-#{$i},
+      .#{$value}y-#{$i} {
+        #{$name}-top: #{$i}px;
+      }
+
+      .#{$value}-#{$i},
+      .#{$value}b-#{$i},
+      .#{$value}y-#{$i} {
+        #{$name}-bottom: #{$i}px;
+      }
+    }
+  }
+}
+
+@mixin mBuildRadius($lenght: 100) {
+  @for $i from 1 through $lenght {
+    .radius-#{$i},
+    .radius-bottom-#{$i},
+    .radius-left-#{$i} {
+      border-bottom-left-radius: #{$i}px;
+    }
+
+    .radius-#{$i},
+    .radius-bottom-#{$i},
+    .radius-right-#{$i} {
+      border-bottom-right-radius: #{$i}px;
+    }
+
+    .radius-#{$i},
+    .radius-top-#{$i},
+    .radius-left-#{$i} {
+      border-top-left-radius: #{$i}px;
+    }
+
+    .radius-#{$i},
+    .radius-top-#{$i},
+    .radius-right-#{$i} {
+      border-top-right-radius: #{$i}px;
+    }
+  }
+}
+
+@mixin mBuildOpacity() {
+  @for $i from 0 through 100 {
+    $o: $i;
+
+    @if $i < 9 {
+      $o: "00#{$i}";
+    } @else if $i < 99 {
+      $o: "0#{$i}";
+    }
+
+    .opacity-#{$o} {
+      opacity: #{$i * 0.01};
+    }
+  }
+}
+
+@mixin mBuildGap() {
+  @for $i from 1 through $lenght {
+    .gap-#{$i} {
+      gap: #{$i}px;
+    }
+
+    .gapr-#{$i} {
+      column-gap: #{$i}px;
+    }
+
+    .gapc-#{$i} {
+      row-gap: #{$i}px;
+    }
+  }
+}

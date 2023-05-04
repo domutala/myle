@@ -1,0 +1,46 @@
+{
+  "name": "myle",
+  "version": "0.0.1",
+  "description": "A fast front-end framework that makes web development easy with its clean design, user-friendly interface and robust functionality.",
+  "main": "lib/index.js",
+  "sass": "lib/sass/myle.scss",
+  "style": "lib/css/myle.css",
+  "types": "lib/typings/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "gulp build",
+    "dev": "yarn build && yarn unlink && yarn link",
+    "deploy": "yarn build && yarn pack && yarn publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/domutala/myle.git"
+  },
+  "keywords": [
+    "css",
+    "style",
+    "sass",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
+  ],
+  "author": "moodstyle",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/gulp": "^4.0.10",
+    "@types/gulp-sass": "^5.0.0",
+    "del": "6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "merge2": "^1.4.1",
+    "node-sass": "^8.0.0",
+    "sass": "^1.62.1",
+    "typescript": "^5.0.4"
+  }
+}

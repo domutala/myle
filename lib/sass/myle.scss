@@ -1,0 +1,38 @@
+$colors: (
+  primary: "0, 166, 251",
+  primary-flat: "227, 242, 253",
+  danger: "239, 35, 60",
+  danger-flat: " 255, 227, 224",
+  success: "42, 145, 52",
+  success-flat: "183, 239, 197",
+  info: "255, 216, 25",
+  info-flat: "255, 246, 204",
+  dark: "37, 36, 34",
+  dark-flat: "233, 236, 239",
+  light: "255, 255, 255",
+  light-flat: "255, 255, 255",
+);
+
+$screens: (
+  xg: 1272,
+  md: 992,
+  sm: 772,
+  xs: 572,
+);
+
+// mixins
+@import "./mixins/screen";
+@import "./mixins/color";
+@import "./mixins/space";
+@import "./mixins/size";
+@import "./mixins/grid";
+@import "./mixins/order";
+
+@import "./colors";
+@import "./space";
+@import "./fonts";
+@import "./display";
+@import "./size";
+@import "./grid";
+@import "./order";
+@import "./utils";

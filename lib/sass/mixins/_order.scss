@@ -1,0 +1,11 @@
+@mixin mBuildOrder($index: "") {
+  @if str-length($string: $index) > 0 {
+    $index: -#{$index};
+  }
+
+  @for $i from 1 through 12 {
+    .order#{$index}-#{$i} {
+      order: $i;
+    }
+  }
+}

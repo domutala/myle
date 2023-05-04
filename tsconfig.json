@@ -10,9 +10,8 @@
     "strict": false,
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "types": ["./types"]
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["./types", "**/*.ts", "gulpfile.js"],
+  "include": ["**/*.ts", "gulpfile.js"],
   "exclude": ["node_modules", "lib"]
 }
